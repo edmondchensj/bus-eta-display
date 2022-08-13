@@ -1,0 +1,87 @@
+
+#logo {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    border: 3px solid rgb(232, 232, 232);
+    font-weight: 400;
+    font-size: 140%;
+    padding: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: block;
+    text-align: center;
+    color: rgb(52, 52, 52);
+}
+
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
+
+.btn-xl {
+    padding: 14px 28px;
+    font-size: 22px;
+}
+
+.text-lg {
+    font-size: 130%;
+}
+
+.text-md {
+    font-size: 100%;
+}
+
+.form-group {
+    margin-bottom: 10px !important;
+}
+
+.btn-primary {
+    border-color: rgb(129, 64, 173);
+    background-color: rgb(129, 64, 173);
+}
+
+.btn-primary:not(:disabled):not(:disabled):active, .btn-primary:hover  {
+    background-color:rgb(157, 87, 206) !important;
+}
+
+.bg-primary {
+    background-color: #9b5abf !important;
+}
+
+@media screen and (min-width: 600px) {
+    #logo {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 400px;
+    }
+}
+
+#post-list {
+    min-height: 50vh;
+    margin-bottom: 20px;
+}
+
+#post {
+    min-height: 50vh;
+    margin-bottom: 20px;
+}
+
+.post-link {
+    margin-top: 15px;
+    display: block;
+}
+
+.post-subtitle {
+    font-size: 95%;
+    color: rgb(73, 73, 73);
+}
+
+#footer {
+    font-size: 90%;
+    text-align: center;
+    color:rgb(79, 79, 79);
+}
