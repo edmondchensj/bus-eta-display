@@ -79,7 +79,7 @@ async function setScreenWakeLock() {
 function setLoaders() {
   // Set a loading spinner while API fetches data
   const loader = `
-    <div class="row px-2 justify-content-center mt-4">
+    <div class="row px-2 justify-content-center mt-2">
       <div class="spinner-border mt-2 text-black-50" role="status">
           <span class="sr-only">Loading...</span>
       </div>
