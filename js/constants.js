@@ -41,11 +41,6 @@ const dummyData = {
         "stopNumber": "",
         "direction": "",
         "etaData": [
-          {
-            "serviceID": "",
-            "etaMinutes": 9,
-            "busLicensePlate": "BUS-4"
-          }
         ],
         "etaAlert": []
       }

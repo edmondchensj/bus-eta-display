@@ -39,6 +39,10 @@
     margin-bottom: 10px !important;
 }
 
+.text-primary {
+    color:rgb(129, 64, 173) !important;
+}
+
 .btn-primary {
     border-color: rgb(129, 64, 173);
     background-color: rgb(129, 64, 173);

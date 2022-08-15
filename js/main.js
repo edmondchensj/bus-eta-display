@@ -7,53 +7,64 @@ async function runGetETA(useDummyData=false) {
     setLoaders();
 
     var data = null
+    var statusCode = null;
 
-    // Run API to fetch bus ETAs
-    const resp = await getETA();
-    if (resp.ok) {
-        console.log("API call successful");
-        data = await resp.json();
-        console.log("Data: ", data);
+    if (useDummyData) {
+        data = dummyData;
+        console.log("Dummy data: ", data);
     } else {
-        console.log("API call failed: ", resp.status);
+        // Call API to fetch bus ETAs
+        const resp = await getETA();
+        if (resp.ok) {
+            console.log("API call successful");
+            data = await resp.json();
+            console.log("Data: ", data);
+        } else {
+            statusCode = resp.status;
+            console.log("API call failed: ", statusCode);
+        }
     }
 
     // Load ETAs in HTML
-    if (data != null) {
-        const terminalIdOrder = ["terminal-1", "terminal-3", "terminal-4"]
-        
-        if (useDummyData) {
-            var data = dummyData;
-            console.log("Dummy data: ", data);
-        }
+    const terminalIdOrder = ["terminal-1", "terminal-3", "terminal-4"]
 
-        // Loop through each terminal
-        for (let i=0; i < data.busETA.length; i++) {
-            const terminalId = terminalIdOrder[i];
+    // Loop through each terminal
+    for (let i=0; i < terminalIdOrder.length; i++) {
+        const terminalId = terminalIdOrder[i];
+        document.getElementById(terminalId).innerHTML = "" // clear HTML
+
+        if (data != null) {
             const etaData = data.busETA[i].etaData;
             if (etaData.length == 0) {
+                // No buses arriving
                 document.getElementById(terminalId).innerHTML = `
-                        Sorry, no buses are arriving
+                        <div class="font-weight-light">Sorry, no buses are arriving</div>
                     `
             } else {
-                // Display each bus ETA
-                document.getElementById(terminalId).innerHTML = ""
+                // Display bus ETAs
                 for (let j=0; j < etaData.length; j++) {
                     document.getElementById(terminalId).innerHTML += `
                             <div class="row justify-content-center text-lg my-1">
                                 <span class="mx-2 badge badge-secondary py-2">
                                 ${etaData[j].busLicensePlate}</span>
-                                <span class="mx-2">${etaData[j].etaMinutes} min </span>
+                                <span class="mx-2 font-weight-light">${etaData[j].etaMinutes} min </span>
                             </div>
                         `
                 }
             }
-        }
-
-        // Set timestamp
-        const timestamp = getLocalTime();
-        document.getElementById("last-update-ts").innerText = "Last updated " + timestamp;
+        } else {
+            // Display error code
+            document.getElementById(terminalId).innerHTML = `
+                    <div class="row justify-content-center text-danger font-weight-light">An error occurred with the API call</div>
+                    <div class="row justify-content-center text-muted font-weight-light">(status code ${statusCode})</div>
+                `
+        }        
     }
+
+    // Set timestamp
+    const timestamp = getLocalTime();
+    document.getElementById("last-update-ts").innerText = "Last updated " + timestamp;
+
 }
 
 export { runGetETA };
