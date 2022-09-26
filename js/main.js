@@ -26,7 +26,7 @@ async function runGetETA(useDummyData=false) {
     }
 
     // Load ETAs in HTML
-    const terminalIdOrder = ["terminal-1", "terminal-3", "terminal-4"]
+    const terminalIdOrder = ["terminal-1", "terminal-3", "terminal-4", "landside-t1", "landside-t3", "landside-t4-arr"]
 
     // Loop through each terminal
     for (let i=0; i < terminalIdOrder.length; i++) {
@@ -44,10 +44,10 @@ async function runGetETA(useDummyData=false) {
                 // Display bus ETAs
                 for (let j=0; j < etaData.length; j++) {
                     document.getElementById(terminalId).innerHTML += `
-                            <div class="row justify-content-center text-lg my-1">
-                                <span class="mx-2 badge badge-secondary py-2">
+                            <div class="row justify-content-center my-1">
+                                <span class="mx-0 badge badge-secondary py-2">
                                 ${etaData[j].busLicensePlate}</span>
-                                <span class="mx-2 font-weight-light">${etaData[j].etaMinutes} min </span>
+                                <span class="ml-2 font-weight-light">${etaData[j].etaMinutes} min </span>
                             </div>
                         `
                 }

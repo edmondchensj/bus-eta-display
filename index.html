@@ -33,24 +33,66 @@
         </div>
 
         <div id="main">
-            <div class="row justify-content-center mt-2 mb-4 py-2 mx-2">
-                <h3 class="font-weight-light">Terminal 1</h3>
-                <div id="terminal-1" class="block">
-                </div>
-            </div>
+            <table class="table">
+                <thead>
+                    <tr class="py-0">
+                        <th class="text-center py-0 my-0">Airside</th>
+                        <th class="text-center py-0 my-0">Landside</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="row justify-content-center py-2 mx-2">
+                                <h4 class="font-weight-light">T1</h3>
+                                <div id="terminal-1" class="block">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="row justify-content-center py-2 mx-2">
+                                <h4 class="font-weight-light">T1</h3>
+                                <div id="landside-t1" class="block">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="row justify-content-center py-2 mx-2">
+                                <h4 class="font-weight-light">T3</h3>
+                                <div id="terminal-3" class="block">
+                                </div>
+                            </div>
+                        </td>
 
-            <div class="row justify-content-center my-4 py-2 mx-2">
-                <h3 class="font-weight-light">Terminal 3</h3>
-                <div id="terminal-3" class="block">
-                </div>
-            </div>
-
-            <div class="row justify-content-center my-4 py-2 mx-2">
-                <h3 class="font-weight-light">Terminal 4</h3>
-                <div id="terminal-4" class="block">
-                </div>
-            </div>
-
+                        <td>
+                            <div class="row justify-content-center py-2 mx-2">
+                                <h4 class="font-weight-light">T3</h3>
+                                <div id="landside-t3" class="block">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="row justify-content-center py-2 mx-2">
+                                <h4 class="font-weight-light">T4</h3>
+                                <div id="terminal-4" class="block">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="row justify-content-center py-2 mx-2">
+                                <h4 class="font-weight-light">T4 (Arr)</h3>
+                                <div id="landside-t4-arr" class="block">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
             <div class="row justify-content-center my-5">
                 <button id="fetch-latest" class="btn btn-primary mx-2" onclick="onFetchLatest()">Fetch Latest</button>
                 <button id="use-dummy" class="btn btn-link text-secondary" onclick="onUseDummy()">Use Dummy Data</button>

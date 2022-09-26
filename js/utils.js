@@ -88,6 +88,9 @@ function setLoaders() {
   document.getElementById("terminal-1").innerHTML = loader;
   document.getElementById("terminal-3").innerHTML = loader;
   document.getElementById("terminal-4").innerHTML = loader;
+  document.getElementById("landside-t1").innerHTML = loader;
+  document.getElementById("landside-t3").innerHTML = loader;
+  document.getElementById("landside-t4-arr").innerHTML = loader;
 }
 
 export { goToPage, getCurrentISOTime, setScreenWakeLock, setLoaders, getLocalTime };
